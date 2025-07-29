@@ -58,6 +58,7 @@ def create_chain(vectorstore):
 
 st.set_page_config(
     page_title = "Chat with Doc",
+    page_icon="📄"
     layout = "centered"
 )
 
