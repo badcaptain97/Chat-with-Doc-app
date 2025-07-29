@@ -9,13 +9,13 @@ from langchain_community.vectorstores import FAISS
 from langchain_groq import ChatGroq
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory.buffer import ConversationBufferMemory
+from pathlib import Path
 
 from dotenv import load_dotenv
 
 load_dotenv()
 
-working_dir = os.path.dirname(os.path.abspath(__file__))
-
+working_dir = Path(__file__).resolve().parent
 
 def load_doc(file_path):
     loader = UnstructuredFileLoader(file_path)
