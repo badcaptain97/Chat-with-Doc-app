@@ -24,7 +24,8 @@ def load_doc(file_path):
 
 
 def setup_vectorstore(documents):
-    embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+    embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2",
+    model_kwargs={"device": "cpu"})
     text_splitter = CharacterTextSplitter(
         separator="/n",
         chunk_size=1000,
